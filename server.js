@@ -7,5 +7,5 @@ app.get('/test', function(req, res) {
   res.send('Response recorded for Homepage!!');
 });
 app.listen(port, function() {
-  console.log('app is running  on port 3000');
+  console.log('app is running  on port '+port);
 });
