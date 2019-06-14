@@ -2,6 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const constants = require('./constants')
 const cors = require('cors')
+const fetch   = require('node-fetch');
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -14,5 +15,8 @@ app.listen(port, function() {
 });
 app.get('/test/:x/:y', cors(), function(req, res) {
   console.log(req.params);
-  res.json(constants.weather);
+  const url = fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${process.env.WEATHERAPI}/${req.params.x},${req.params.y}`)
+  fetch(url)
+  .then(r => r.json())
+  .then(data => res.send({data}))
 });
