@@ -18,6 +18,6 @@ app.get('/test/:x/:y', cors(), function(req, res) {
   console.log(req.params);
   const url = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${api}/${req.params.x},${req.params.y}`
   fetch(url)
-  .then(r => r.json())
   .then(console.log)
+  //.then(console.log)
 });
