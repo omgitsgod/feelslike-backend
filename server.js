@@ -3,7 +3,7 @@ require('dotenv').config();
 const constants = require('./constants')
 const cors = require('cors')
 const fetch   = require('node-fetch');
-const api = process.env.WEATHERAPI
+const api = process.env.WEATHERAPI || 'x'
 
 const app = express();
 const port = process.env.PORT || 5000;
