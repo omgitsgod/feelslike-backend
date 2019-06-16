@@ -20,5 +20,5 @@ app.get('/test/:x/:y', cors(), function(req, res) {
   const url = `https://api.darksky.net/forecast/${api}/40.7207851,-73.97980369999999`
   fetch(url)
   .then(res => res.json())
-  .then(res.json)
+  .then(r => res.send(r))
 });
