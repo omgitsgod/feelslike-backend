@@ -20,4 +20,5 @@ app.get('/test/:x/:y', cors(), function(req, res) {
   fetch(url)
   .then(r => r.json())
   .then(res.json)
+  .catch(console.log);
 });
