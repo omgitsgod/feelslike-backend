@@ -16,7 +16,8 @@ app.listen(port, function() {
 });
 app.get('/test/:x/:y', cors(), function(req, res) {
   console.log(req.params);
-  const url = `https:/api.darksky.net/forecast/${api}/${req.params.x},${req.params.y}`
+  //${req.params.x}${req.params.y}
+  const url = `https:/api.darksky.net/forecast/${api}/40.7207851,-73.97980369999999`
   fetch(url)
   .then(res => res.json())
   .catch(console.log)
