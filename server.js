@@ -20,5 +20,5 @@ app.get('/test/:x/:y', cors(), function(req, res) {
   fetch(url)
   .then(r => r.json())
   .then(res.json)
-  .catch(err => throw new Error(err));
+  .catch(err => new Error(err));
 });
